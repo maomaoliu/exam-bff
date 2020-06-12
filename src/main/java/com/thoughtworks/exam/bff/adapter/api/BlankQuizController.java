@@ -1,14 +1,19 @@
 package com.thoughtworks.exam.bff.adapter.api;
 
 import com.thoughtworks.exam.bff.adapter.client.BlankQuizClient;
+import com.thoughtworks.exam.bff.adapter.client.BlankQuizDTO;
 import com.thoughtworks.exam.bff.adapter.client.CreateQuizCommand;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/quizzes")
 public class BlankQuizController {
-    private BlankQuizClient blankQuizClient;
+    private final BlankQuizClient blankQuizClient;
+
 
     public BlankQuizController(BlankQuizClient blankQuizClient) {
         this.blankQuizClient = blankQuizClient;

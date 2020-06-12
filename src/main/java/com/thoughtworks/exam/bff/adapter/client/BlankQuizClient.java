@@ -1,11 +1,18 @@
 package com.thoughtworks.exam.bff.adapter.client;
 
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
-@FeignClient(name = "BlankQuiz", url = "http://localhost:8001")
-public interface BlankQuizClient {
-    @RequestMapping(method = RequestMethod.POST, value = "/quizzes", consumes = "application/json")
-    String create(CreateQuizCommand createQuizCommand);
+@Component
+public class BlankQuizClient {
+    private RestTemplate restTemplate;
+
+    public BlankQuizClient(RestTemplateBuilder restTemplateBuilder) {
+        this.restTemplate = restTemplateBuilder.build();
+    }
+
+    public String create(CreateQuizCommand createQuizCommand) {
+        return restTemplate.postForObject("http://localhost:8100/quizzes", createQuizCommand, BlankQuizDTO.class).toString();
+    }
 }
