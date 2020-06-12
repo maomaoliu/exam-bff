@@ -41,7 +41,7 @@ class BlankQuizControllerTest {
         CreateQuizCommand createQuizCommand = CreateQuizCommand.builder().score(5)
                 .question("防腐测试是什么？")
                 .referenceAnswer("防腐测试是为了及时预警第三方API的破坏，防止因反馈的缺失而继续发生腐化的测试")
-                .teacherId("sjyuan")
+                .teacherId("9043inol9f4ifnflmakmfdas09fd4ifnflma")
                 .build();
         mockMvc.perform(post("/quizzes")
                 .contentType(MediaType.APPLICATION_JSON)
