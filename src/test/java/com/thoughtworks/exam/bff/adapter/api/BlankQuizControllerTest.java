@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-@AutoConfigureStubRunner(ids = {"com.thoughtworks:exam-quiz-service-stubs111:0.0.1-SNAPSHOT:stubs:8100"},
+@AutoConfigureStubRunner(ids = {"com.thoughtworks:exam-quiz-service-stubs:0.0.1-SNAPSHOT:stubs:8100"},
         stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 @AutoConfigureMockMvc
 class BlankQuizControllerTest {
