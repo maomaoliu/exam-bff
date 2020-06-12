@@ -1,0 +1,10 @@
+stubrunner:
+  repositoryRoot: 'stubs://file:///Users/sjyuan/Career/ThoughtWorks/Training/Auto-Testing/Repositories/exam-quiz-stub/src/test/resources/contracts/blankQuiz'
+  ids: 'com.thoughtworks:exam-quiz-service-stubs:8100'
+  stubs-mode: remote
+  generate-stubs: true
+
+
+quizService:
+  host: 'http://localhost'
+  port: 8100
